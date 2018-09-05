@@ -83,7 +83,7 @@ if [[ "$(uname -s)" == "Linux" ]]; then
   alias xo='xdg-open'
 else
   export CLICOLOR=1
-  export LSCOLORS=exgxfxDxCxDxDxabagacad
+  export LSCOLORS=ExgxFxDxCxDxDxAbxcxbxc
   alias ls='ls -hFG'
   alias vlc='/Applications/VLC.app/Contents/MacOS/VLC'
   alias firefox='/Applications/Firefox.app/Contents/MacOS/firefox'
