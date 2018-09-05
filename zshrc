@@ -34,8 +34,13 @@ setopt interactivecomments
 ### Keybinding
 
 bindkey -v # VIM insert mode keybindings
-bindkey "^[[1;5C" forward-word  # Ctrl-Left
-bindkey "^[[1;5D" backward-word # Ctrl-Right
+if [[ "$(uname -s)" == "Linux" ]]; then
+  bindkey "^[[1;5C" forward-word  # Ctrl-Left
+  bindkey "^[[1;5D" backward-word # Ctrl-Right
+else
+  bindkey "^[f" forward-word  # Alt-Left
+  bindkey "^[b" backward-word # Alt-Right
+fi
 bindkey '^R' history-incremental-search-backward # Ctrl-R
 bindkey '^F' history-incremental-search-forward # Ctrl-R
 
