@@ -63,8 +63,7 @@ PROMPT_SHELL="%B%(!.%F{red}${PROMPT_SHELL_CHAR}%f.%F{green}${PROMPT_SHELL_CHAR}%
 PROMPT_USER_HOST="${SSH_TTY:+"%B%F{green}%n@%m%f%b:"}"
 PROMPT="${PROMPT_USER_HOST}%B%F{blue}%~%f%b ${PROMPT_SHELL} "
 RPROMPT_RETURN_VALUE="%(?.. %F{red}%?↵%f)"
-RPROMPT="${RPROMPT_RETURN_VALUE}"
-#RPROMPT="$(git_prompt)"
+RPROMPT='${RPROMPT_RETURN_VALUE} $(git_prompt)'
 
 # Support colors in less
 export LESS_TERMCAP_mb=$'\E[01;31m'
