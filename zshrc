@@ -2,8 +2,6 @@
 
 DOTFILES=$HOME/.dotfiles
 
-eval `dircolors $DOTFILES/include/zsh/dircolors`
-
 ### ZSH Setup
 
 HISTFILE=$HOME/.zsh_history
@@ -75,12 +73,16 @@ export LESS_TERMCAP_us=$'\E[01;32m'
 ### Aliases
 
 if [[ "$(uname -s)" == "Linux" ]]; then
-  export LSCOLORS=cxBxhxDxfxhxhxhxhxcxcx
-  export CLICOLOR=1
+  eval `dircolors $DOTFILES/include/zsh/dircolors`
   alias ls='ls -hF --color=auto'
   alias xo='xdg-open'
 else
-  alias ls='ls -Gh'
+  export CLICOLOR=1
+  export LSCOLORS=exgxfxDxCxDxDxabagacad
+  alias ls='ls -hFG'
+  alias vlc='/Applications/VLC.app/Contents/MacOS/VLC'
+  alias firefox='/Applications/Firefox.app/Contents/MacOS/firefox'
+  alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
 fi
 alias ll='ls -l'
 alias la='ls -A'
@@ -103,5 +105,5 @@ export TMP=$HOME/tmp
 ### Load host specific file
 HOST_ZSHRC="$DOTFILES/include/zsh/zshrc-$(hostname).zsh"
 if [[ -s ${HOST_ZSHRC} ]]; then
- source ${HOST_ZSHRC}
+  source ${HOST_ZSHRC}
 fi
