@@ -1,0 +1,30 @@
+[alias]
+    st = status
+    ci = commit
+    br = branch
+    co = checkout
+    cl = clean -fdx
+    df = diff
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    new = !git lg $1@{1}..$1@{0} "$@"
+    edit-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; vim `f`"
+
+[color]
+    branch = auto
+    diff = auto
+    interactive = auto
+    status = auto
+    ui = true
+
+[core]
+    editor = vim
+
+[log]
+    decorate = full
+
+[push]
+	default = current
+
+[pull]
+	rebase = true
+
