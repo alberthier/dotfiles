@@ -10,5 +10,9 @@ function sweechdev()
     export PATH=$(npm bin):$PATH
 }
 
+# Android dev
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$HOME/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$PATH
+
+# Rust dev
+export PATH="$HOME/.cargo/bin:$PATH"
