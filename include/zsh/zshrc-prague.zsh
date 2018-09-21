@@ -47,3 +47,4 @@ export FGLASDIR=$HOME/fourjs/gas
 export ANDROID_HOME=$HOME/software/android-sdk
 export ANDROID_NDK_HOME=$HOME/software/android-ndk-r10d
 export PATH=$HOME/bin:$FGLASDIR/bin:$FGLDIR/bin:$ANDROID_NDK_HOME:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$PATH
+export PATH="$HOME/.cargo/bin:$PATH"
