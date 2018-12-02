@@ -5,7 +5,6 @@ function vencmp4()
 
 function sweechdev()
 {
-    nvm use default
     cd $HOME/Projects/sweech/app/src/main/js
     export PATH=$(npm bin):$PATH
 }
