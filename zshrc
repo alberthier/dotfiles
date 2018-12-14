@@ -70,7 +70,9 @@ git_prompt() {
     echo -n "%F{yellow}$BRANCH"
 
     if [ ! -z "$(git status --short)" ]; then
-      echo " %F{red}✗"
+      echo " %F{red}✗%f"
+    else
+      echo " %F{green}✔%f"
     fi
   fi
 }
