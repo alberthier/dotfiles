@@ -122,6 +122,8 @@ alias sshhome='ssh eric@alberthier.dynu.net'
 export EDITOR=vim
 export VISUAL=$EDITOR
 export TMP=$HOME/tmp
+export PAGER=less
+export GIT_PAGER='less -F -X'
 
 ### Load host specific file
 HOST_ZSHRC="$DOTFILES/include/zsh/zshrc-$(hostname).zsh"
