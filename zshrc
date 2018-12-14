@@ -8,19 +8,23 @@ HISTFILE=$HOME/.zsh_history
 HISTSIZE=1000
 SAVEHIST=1000
 
-zstyle ':completion:*' menu select
-zstyle ':completion:*' completer _complete
-zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' '+l:|=* r:|=*'
-
 autoload -U compinit && compinit
 zmodload -i zsh/complist
+zstyle ':completion:*' menu select
+zstyle ':completion:*:default' list-colors ''
+# case-insensitive, partial-word, and then substring completion
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+zstyle ':completion:*' completer _complete _approximate
+zstyle ':completion:*:approximate:*' max-errors 1 numeric
+zstyle -e ':completion:*:approximate:*' max-errors 'reply=($((($#PREFIX+$#SUFFIX)/3))numeric)'
+zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;34=0=01'
 
-unsetopt menu_complete
 unsetopt flowcontrol
-
+setopt no_beep
 setopt prompt_subst
 setopt always_to_end
 setopt append_history
+setopt inc_append_history
 setopt auto_menu
 setopt complete_in_word
 setopt extended_history
@@ -28,15 +32,26 @@ setopt hist_expire_dups_first
 setopt hist_ignore_dups
 setopt hist_ignore_space
 setopt hist_verify
-setopt inc_append_history
 setopt interactivecomments
 
 ### Keybinding
+
+autoload -U up-line-or-beginning-search
+zle -N up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N down-line-or-beginning-search
 
 bindkey -v # VIM insert mode keybindings
 if [[ "$(uname -s)" == "Linux" ]]; then
   bindkey "^[[1;5C" forward-word  # Ctrl-Left
   bindkey "^[[1;5D" backward-word # Ctrl-Right
+  bindkey "^H" backward-kill-word # Ctrl-Backspace
+  bindkey "^[[1;3D" backward-word # Alt-Left
+  bindkey "^[[1;3C" forward-word  # Alt-Right
+  bindkey '^[[1;5A' up-line-or-beginning-search # Ctrl-Up
+  bindkey '^[[1;5B' down-line-or-beginning-search # Ctrl-Down
+  bindkey -M menuselect '^[[Z' reverse-menu-complete # Shift-Tab
+  bindkey -M menuselect '^[' send-break # Escape
 else
   bindkey "^[f" forward-word  # Alt-Left
   bindkey "^[b" backward-word # Alt-Right
