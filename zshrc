@@ -57,6 +57,10 @@ else
   bindkey "^[b" backward-word # Alt-Right
   bindkey "^[[H" beginning-of-line # Fn-Left
   bindkey "^[[F" end-of-line       # Fn-Right
+  bindkey '^A' up-line-or-beginning-search # Alt-Up
+  bindkey '^E' down-line-or-beginning-search # Alt-Down
+  bindkey -M menuselect '^[[Z' reverse-menu-complete # Shift-Tab
+  bindkey -M menuselect '^[' send-break # Escape
 fi
 bindkey '^R' history-incremental-search-backward # Ctrl-R
 bindkey '^F' history-incremental-search-forward # Ctrl-R
