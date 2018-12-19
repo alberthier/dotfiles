@@ -4,7 +4,7 @@ set laststatus=2      " Enable status line
 syntax on             " Enable syntax highlighting
 set mouse=a           " Enable mouse support in console
 colorscheme escuro    " Load colorscheme
-if !has("gui_running") && $TERM =~# ".*xterm.*"
+if !has("gui_running") && $TERM =~# ".*-256color"
   set t_Co=256      " Force 256 colors terminal
 endif
 
