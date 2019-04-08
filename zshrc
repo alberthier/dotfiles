@@ -57,6 +57,7 @@ else
   bindkey "^[b" backward-word # Alt-Right
   bindkey "^[[H" beginning-of-line # Fn-Left
   bindkey "^[[F" end-of-line       # Fn-Right
+  bindkey "^[[3~" delete-char      # Fn-Backspace
   bindkey '^A' up-line-or-beginning-search # Alt-Up
   bindkey '^E' down-line-or-beginning-search # Alt-Down
   bindkey -M menuselect '^[[Z' reverse-menu-complete # Shift-Tab
