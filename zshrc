@@ -50,6 +50,9 @@ if [[ "$(uname -s)" == "Linux" ]]; then
   bindkey "^[[1;3C" forward-word  # Alt-Right
   bindkey '^[[1;5A' up-line-or-beginning-search # Ctrl-Up
   bindkey '^[[1;5B' down-line-or-beginning-search # Ctrl-Down
+  bindkey "^[[H" beginning-of-line
+  bindkey "^[[F" end-of-line
+  bindkey "^[[3~" delete-char
   bindkey -M menuselect '^[[Z' reverse-menu-complete # Shift-Tab
   bindkey -M menuselect '^[' send-break # Escape
 else
