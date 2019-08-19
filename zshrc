@@ -132,7 +132,7 @@ alias sshhome='ssh eric@alberthier.dynu.net'
 
 export EDITOR=vim
 export VISUAL=$EDITOR
-export TMP=$HOME/tmp
+export tp=$HOME/tmp
 export PAGER=less
 export GIT_PAGER='less -F -X'
 
