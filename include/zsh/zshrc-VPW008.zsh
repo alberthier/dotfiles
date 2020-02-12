@@ -28,9 +28,10 @@ export NVM_DIR="$HOME/.nvm"
 export PKG_CONFIG_PATH=$HOMEBREW_PREFIX/lib/pkgconfig:/usr/lib/pkgconfig
 
 # Android
-export ANDROID_HOME=$HOME/software/android-sdk
-export ANDROID_NDK_HOME=$HOME/software/android-ndk-r10d
-export PATH=$ANDROID_NDK_HOME:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$PATH
+export JAVA_HOME=$HOME/software/android-studio/jre
+export ANDROID_SDK_ROOT=$HOME/software/android-sdk
+export ANDROID_NDK=$ANDROID_SDK_ROOT/ndk/19.2.5345600
+export PATH=$ANDROID_NDK:$ANDROID_SDK_ROOT/emulator:$ANDROID_SDK_ROOT/tools/bin:$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$JAVA_HOME/bin:$PATH
 
 # Other PATH additions
 export PATH=$HOME/.cargo/bin:$PATH
