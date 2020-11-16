@@ -2,7 +2,7 @@ set nocompatible      " Choose no compatibility with legacy vi
 set laststatus=2      " Enable status line
 
 syntax on             " Enable syntax highlighting
-set mouse=n           " Enable mouse support in console (normal mode)
+set mouse=i           " Enable mouse support in console (insert mode)
 colorscheme escuro    " Load colorscheme
 if !has("gui_running") && $TERM =~# ".*-256color"
   set t_Co=256      " Force 256 colors terminal
