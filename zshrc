@@ -65,6 +65,8 @@ else
   bindkey '^E' down-line-or-beginning-search # Alt-Down
   bindkey -M menuselect '^[[Z' reverse-menu-complete # Shift-Tab
   bindkey -M menuselect '^[' send-break # Escape
+  bindkey "^[[A" up-line-or-beginning-search # Up
+  bindkey "^[[B" down-line-or-beginning-search # Down
 fi
 bindkey '^R' history-incremental-search-backward # Ctrl-R
 bindkey '^F' history-incremental-search-forward # Ctrl-R
@@ -126,7 +128,11 @@ alias grep='grep --color'
 alias less='less -R'
 alias diff='colordiff -u'
 alias tmux='tmux new-session -A -s main'
+alias bat='bat -p'
+alias exa='exa -F'
+alias exal='exa -l'
 alias sshhome='ssh eric@alberthier.dynu.net'
+alias dockercleanup='docker container prune -f && docker image prune -f'
 
 ### Environment variables
 
