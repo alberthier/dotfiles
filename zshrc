@@ -133,8 +133,6 @@ alias less='less -R'
 alias diff='colordiff -u'
 alias tmux='tmux new-session -A -s main'
 alias bat='bat -p'
-alias exa='exa -F'
-alias exal='exa -l'
 alias sshhome='ssh eric@alberthier.dynu.net'
 alias dockercleanup='docker container prune -f && docker image prune -f'
 
@@ -142,7 +140,7 @@ alias dockercleanup='docker container prune -f && docker image prune -f'
 
 export EDITOR=vim
 export VISUAL=$EDITOR
-export tp=$HOME/tmp
+export tmp=$HOME/tmp
 export PAGER=less
 export GIT_PAGER='less -F -X'
 
