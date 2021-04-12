@@ -117,6 +117,10 @@ else
   alias firefox='/Applications/Firefox.app/Contents/MacOS/firefox'
   alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
 fi
+if whence exa > /dev/null; then
+  alias ls='exa -F --group-directories-first --git'
+  alias tree='exa -T'
+fi
 alias ll='ls -l'
 alias la='ls -A'
 alias rm='rm -iv'
